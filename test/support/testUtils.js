@@ -7,6 +7,6 @@ const sinonChai = require('sinon-chai');
 chai.use(chaiAsPromised);
 chai.use(sinonChai);
 
-module.exports = {}
+module.exports = {};
 module.exports.expect = chai.expect;
 module.exports.sinon = sinon;
