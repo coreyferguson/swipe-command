@@ -14,10 +14,10 @@ class FieldState {
   create() {
     ioc.game.phaserGame.physics.startSystem(Phaser.Physics.ARCADE);
     ioc.game.phaserGame.world.setBounds(
-      ioc.cosmos.init.bounds.x,
-      ioc.cosmos.init.bounds.y,
-      ioc.cosmos.init.bounds.width,
-      ioc.cosmos.init.bounds.height
+      0,
+      0,
+      ioc.game.phaserGame.width,
+      ioc.game.phaserGame.height
     );
     ioc.fieldStates.forEach(state => {
       if (state.create) state.create();

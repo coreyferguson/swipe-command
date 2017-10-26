@@ -1,9 +1,9 @@
 
 const ioc = require('./container');
 
-container.config = require('../config');
-container.game = require('../game');
+ioc.config = require('../config');
+ioc.game = require('../game');
 
 // State: Field
-container.fieldState = require('../game/phaserStates/fieldState');
-container.fieldStates = [];
+ioc.fieldState = require('../game/phaserStates/fieldState');
+ioc.fieldStates = [];
