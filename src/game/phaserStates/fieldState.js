@@ -12,7 +12,7 @@ class FieldState {
   }
 
   create() {
-    ioc.game.phaserGame.physics.startSystem(Phaser.Physics.ARCADE);
+    ioc.game.phaserGame.physics.startSystem(ioc.Phaser.Physics.ARCADE);
     ioc.game.phaserGame.world.setBounds(
       0,
       0,

@@ -1,6 +1,7 @@
 
 const ioc = require('./container');
 
+ioc.Phaser = Phaser;
 ioc.config = require('../config');
 ioc.game = require('../game');
 
