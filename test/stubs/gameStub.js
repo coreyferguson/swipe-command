@@ -1,4 +1,6 @@
 
+const PointerStub = require('./PointerStub');
+
 class GameStub {
 
   constructor() {
@@ -9,6 +11,12 @@ class GameStub {
       },
       world: {
         setBounds: () => {}
+      },
+      input: {
+        mousePointer: new PointerStub(),
+        pointers: [
+          new PointerStub()
+        ]
       }
     };
   }

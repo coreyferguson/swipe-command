@@ -7,4 +7,6 @@ ioc.game = require('../game');
 
 // State: Field
 ioc.fieldState = require('../game/phaserStates/fieldState');
-ioc.fieldStates = [];
+ioc.fieldStates = [
+  require('../game/gameStates/gestureCommands')
+];

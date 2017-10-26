@@ -1,7 +1,7 @@
 
 const ioc = require('../../src/ioc/container');
 
-ioc.Phaser = require('../stubs/PhaserStub');
+ioc.Phaser = require('../stubs/phaserStub');
 ioc.config = require('../../src/config');
 ioc.game = require('../stubs/gameStub');
 
