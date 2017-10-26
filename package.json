@@ -4,8 +4,9 @@
   "description": "Automate your way out of space with robot helpers.",
   "main": "index.js",
   "scripts": {
+    "predist": "npm run eslint && npm test",
     "dist": "node scripts/dist.js",
-    "eslint": "./node_modules/.bin/eslint src test",
+    "eslint": "./node_modules/.bin/eslint src test scripts",
     "start": "node_modules/.bin/webpack-dev-server --open",
     "test": "./node_modules/.bin/mocha --recursive test/spec",
     "webpack": "./node_modules/.bin/webpack"
@@ -21,6 +22,7 @@
     "web"
   ],
   "devDependencies": {
+    "asciify": "^1.3.5",
     "aws-sdk": "^2.141.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

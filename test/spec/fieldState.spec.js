@@ -15,7 +15,7 @@ describe('fieldState unit test', () => {
   it('preload ioc to fieldStates', () => {
     ioc.fieldStates.forEach(fieldState => {
       sandbox.stub(fieldState, 'preload');
-    })
+    });
     fieldState.preload();
     ioc.fieldStates.forEach(fieldState => {
       expect(fieldState.preload).to.be.calledOnce;
@@ -25,7 +25,7 @@ describe('fieldState unit test', () => {
   it('create ioc to fieldStates', () => {
     ioc.fieldStates.forEach(fieldState => {
       sandbox.stub(fieldState, 'create');
-    })
+    });
     fieldState.create();
     ioc.fieldStates.forEach(fieldState => {
       expect(fieldState.create).to.be.calledOnce;
@@ -35,7 +35,7 @@ describe('fieldState unit test', () => {
   it('update ioc to fieldStates', () => {
     ioc.fieldStates.forEach(fieldState => {
       sandbox.stub(fieldState, 'update');
-    })
+    });
     fieldState.update();
     ioc.fieldStates.forEach(fieldState => {
       expect(fieldState.update).to.be.calledOnce;

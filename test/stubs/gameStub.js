@@ -21,7 +21,7 @@ class GameStub {
     };
   }
 
-  start(width, height) {}
+  start() {}
   reset() {}
 }
 

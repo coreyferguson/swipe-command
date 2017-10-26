@@ -8,11 +8,11 @@ class GestureCommands {
   }
 
   update() {
-    if (this.isPointerDown()) {
-      console.log('true');
-    } else {
-      console.log('false');
-    }
+    // if (this.isPointerDown()) {
+    //   console.log('true');
+    // } else {
+    //   console.log('false');
+    // }
   }
 
   isPointerDown() {
