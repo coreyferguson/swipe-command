@@ -9,4 +9,4 @@ chai.use(sinonChai);
 
 module.exports = {}
 module.exports.expect = chai.expect;
-module.expect.sinon = sinon;
+module.exports.sinon = sinon;
