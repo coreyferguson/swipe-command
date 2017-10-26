@@ -4,10 +4,11 @@
   "description": "Automate your way out of space with robot helpers.",
   "main": "index.js",
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint src",
-    "start": "node_modules/.bin/webpack-dev-server --open",
+    "dist": "node scripts/dist.js",
     "eslint": "./node_modules/.bin/eslint src test",
-    "test": "./node_modules/.bin/mocha --recursive test/spec"
+    "start": "node_modules/.bin/webpack-dev-server --open",
+    "test": "./node_modules/.bin/mocha --recursive test/spec",
+    "webpack": "./node_modules/.bin/webpack"
   },
   "author": "Corey Ferguson <corey.t.ferguson@gmail.com>",
   "license": "MIT",
@@ -20,13 +21,16 @@
     "web"
   ],
   "devDependencies": {
+    "aws-sdk": "^2.141.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "child-process-promise": "^2.2.1",
     "eslint": "^4.9.0",
     "mocha": "^4.0.1",
+    "s3": "^4.4.0",
     "sinon": "^4.0.2",
     "sinon-chai": "^2.14.0",
     "webpack": "^3.6.0",

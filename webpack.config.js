@@ -1,11 +1,14 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
 
-  entry: "./src/index.js",
+  entry: './src/index.js',
 
   output: {
-    libraryTarget: "this"
+    path: path.resolve(__dirname, 'dist/js'),
+    publicPath: 'js',
+    filename: 'swipe-command.js',
+    libraryTarget: 'this'
   },
 
   module: {
@@ -14,21 +17,21 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["env"]
+            presets: ['env']
           }
         }
       }
     ]
   },
 
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
+    contentBase: path.resolve(__dirname, 'public'),
     compress: true,
     port: 3000,
-    public: "localhost:3000"
+    public: 'localhost:3000'
   }
 
 };
