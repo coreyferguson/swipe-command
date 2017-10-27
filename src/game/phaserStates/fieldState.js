@@ -14,12 +14,6 @@ class FieldState {
 
   create() {
     ioc.game.phaserGame.physics.startSystem(ioc.Phaser.Physics.ARCADE);
-    ioc.game.phaserGame.world.setBounds(
-      0,
-      0,
-      ioc.game.phaserGame.width,
-      ioc.game.phaserGame.height
-    );
     this.background = ioc.game.phaserGame.add.tileSprite(
       0,
       0,
@@ -27,6 +21,7 @@ class FieldState {
       ioc.game.phaserGame.height,
       'background'
     );
+    this.background.tileScale.setTo(0.25, 0.25);
     ioc.fieldStates.forEach(state => {
       if (state.create) state.create();
     });

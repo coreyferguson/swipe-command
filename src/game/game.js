@@ -4,7 +4,11 @@ const ioc = require('../ioc');
 class Game {
 
   start(width, height) {
-    this.phaserGame = new Phaser.Game(1024, 576, Phaser.AUTO);
+    this.phaserGame = new Phaser.Game(
+      window.innerWidth * window.devicePixelRatio,
+      window.innerHeight * window.devicePixelRatio,
+      Phaser.AUTO
+    );
     this.width = width;
     this.height = height;
     this.phaserGame.state.add('fieldState', ioc.fieldState);

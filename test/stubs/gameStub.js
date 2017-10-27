@@ -5,7 +5,18 @@ class GameStub {
 
   constructor() {
     this.phaserGame = {
-      load: () => {},
+      add: {
+        tileSprite: () => {
+          return {
+            tileScale: {
+              setTo: () => {}
+            }
+          };
+        }
+      },
+      load: {
+        image: () => {}
+      },
       physics: {
         startSystem: () => {}
       },
