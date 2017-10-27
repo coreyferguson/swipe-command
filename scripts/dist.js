@@ -31,10 +31,6 @@ cleanDistFolder()
   .then(uploadDist)
   .then(printSuccess)
   .catch(err => {
-    if (err.code === 'BucketAlreadyOwnedByYou') return uploadDist();
-    else throw err;
-  })
-  .catch(err => {
     if (err && err.message) console.error('message:', err.message);
     if (err && err.stderr) console.error('stderr:', err.stderr);
     if (err && err.stack) console.error('stack:', err.stack);
@@ -122,6 +118,9 @@ function createBucket() {
       if (err) reject(err);
       else resolve(data);
     });
+  }).catch(err => {
+    if (err.code === 'BucketAlreadyOwnedByYou') return uploadDist();
+    else throw err;
   });
 }
 
