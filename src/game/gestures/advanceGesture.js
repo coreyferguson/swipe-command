@@ -14,6 +14,14 @@ class AdvanceGesture {
 
   /* eslint no-unused-vars: "off" */
   isGestureApplicable(pointers) {
+    if (
+      !pointers ||
+      !pointers[0] ||
+      !pointers[0].pointers ||
+      !pointers[0].pointers[0]) {
+      return false;
+    }
+
     let singlePointer = true;
     let sX, sY; // smallest x and y
     let lX, lY; // largest x and y
@@ -26,10 +34,12 @@ class AdvanceGesture {
         if (lY === undefined || lY < pointer.y) lY = pointer.y;
       });
     });
+    const firstY = pointers[0].pointers[0].y;
+    const lastY = pointers[pointers.length-1].pointers[0].y;
     const boxWidth = lX-sX;
     const boxHeight = lY-sY;
     const aspectRatio = boxWidth / boxHeight;
-    return (boxWidth < 60 && aspectRatio < 0.5);
+    return (boxWidth < 60 && aspectRatio < 0.5 && lastY < firstY);
   }
 
   apply() {

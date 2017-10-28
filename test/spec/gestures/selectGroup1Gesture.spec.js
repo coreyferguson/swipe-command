@@ -10,6 +10,7 @@ const { expect } = require('../../support/testUtils');
 const singlePreciseTapData = require('./data/singlePreciseTap.json');
 const smallCircle = require('./data/smallCircle.json');
 const doublePreciseTap = require('./data/doublePreciseTap.json');
+const mouseClick = require('./data/mouseClick.json');
 
 describe('selectGroup1Gesture', () => {
 
@@ -27,6 +28,10 @@ describe('selectGroup1Gesture', () => {
 
   it('two fingers', () => {
     expect(gesture.isGestureApplicable(doublePreciseTap)).to.be.false;
+  });
+
+  it('mouse click', () => {
+    expect(gesture.isGestureApplicable(mouseClick)).to.be.false;
   });
 
 });
