@@ -10,3 +10,7 @@ ioc.fieldState = require('../game/phaserStates/fieldState');
 ioc.fieldStates = [
   require('../game/gameStates/gestureCommands')
 ];
+
+ioc.gestures = [
+  require('../game/gestures/selectGroup1Gesture')
+];
