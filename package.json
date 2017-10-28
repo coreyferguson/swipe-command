@@ -8,6 +8,7 @@
     "dist": "node scripts/dist.js",
     "eslint": "./node_modules/.bin/eslint src test scripts",
     "start": "node_modules/.bin/webpack-dev-server --open",
+    "pretest": "npm run eslint",
     "test": "./node_modules/.bin/mocha --recursive test/spec",
     "webpack": "./node_modules/.bin/webpack"
   },

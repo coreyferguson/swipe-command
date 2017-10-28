@@ -1,5 +1,7 @@
 
 const PointerStub = require('./PointerStub');
+const SpriteStub = require('./SpriteStub');
+const TileSpriteStub = require('./TileSpriteStub');
 
 class GameStub {
 
