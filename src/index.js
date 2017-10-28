@@ -1,2 +1,2 @@
 
-module.exports = require('./AutomateOut');
+module.exports = require('./SwipeCommand');

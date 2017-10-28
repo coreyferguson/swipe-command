@@ -5,8 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <title>Automate Out</title>
-    <script src="js/phaser.js"></script>
-    <script src="js/swipe-command.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
     <style>
       body {
         padding: 0px;
@@ -17,6 +16,25 @@
   </head>
 
   <body>
+    <div id='gameContent'></div>
+    <script src="js/phaser.js"></script>
+    <script>
+      // find largest 16:9 ratio that can fit into window
+      const widthRatio = 16;
+      const heightRatio = 9;
+      let width = window.innerWidth;
+      let height = heightRatio*width/widthRatio;
+      if (height > window.innerHeight) {
+        let scale = window.innerHeight/height;
+        width = width*scale;
+        height = height*scale;
+      }
+      // start the game
+      requirejs(['js/swipe-command'], (SwipeCommand) => {
+        const gameContent = document.getElementById('gameContent');
+        new SwipeCommand(width, height, gameContent);
+      });
+    </script>
   </body>
 
 </html>

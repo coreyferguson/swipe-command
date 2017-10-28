@@ -20,6 +20,7 @@ class GameStub {
       physics: {
         startSystem: () => {}
       },
+      scale: {},
       world: {
         setBounds: () => {}
       },

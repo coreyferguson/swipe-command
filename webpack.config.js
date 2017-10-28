@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/js'),
     publicPath: 'js',
     filename: 'swipe-command.js',
-    libraryTarget: 'this'
+    libraryTarget: 'amd'
   },
 
   module: {
