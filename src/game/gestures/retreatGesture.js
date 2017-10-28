@@ -39,6 +39,9 @@ class RetreatGesture {
     const boxWidth = lX-sX;
     const boxHeight = lY-sY;
     const aspectRatio = boxWidth / boxHeight;
+    /* eslint no-console: "off" */
+    console.log(boxWidth, boxHeight, aspectRatio);
+    console.log(firstY, lastY);
     return (boxWidth < 60 && aspectRatio < 0.5 && lastY > firstY);
   }
 

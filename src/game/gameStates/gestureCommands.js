@@ -48,8 +48,8 @@ class GestureCommands {
     gesture.apply();
     this.gestureText.setText(gesture.getName());
     ioc.game.phaserGame.add.tween(this.gestureText)
-      .to({ alpha: 1.0 }, 300, 'Linear')
-      .to({ alpha: 0.0 }, 300, 'Linear')
+      .to({ alpha: 1.0 }, 200, 'Linear')
+      .to({ alpha: 0.0 }, 1000, 'Linear')
       .start();
   }
 
