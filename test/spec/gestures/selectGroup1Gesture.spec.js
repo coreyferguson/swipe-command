@@ -11,7 +11,7 @@ const singlePreciseTapData = require('./data/singlePreciseTap.json');
 const smallCircle = require('./data/smallCircle.json');
 const doublePreciseTap = require('./data/doublePreciseTap.json');
 
-describe.only('selectGroup1Gesture', () => {
+describe('selectGroup1Gesture', () => {
 
   it('gesture name', () => {
     expect(gesture.getName()).to.eql('Select Group 1');
