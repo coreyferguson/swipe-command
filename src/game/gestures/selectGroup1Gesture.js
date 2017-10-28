@@ -1,4 +1,5 @@
 
+const ioc = require('../../ioc');
 
 class SelectGroup1Gesture {
 
@@ -6,7 +7,15 @@ class SelectGroup1Gesture {
     return 'Select Group 1';
   }
 
-  isApplicable(pointers) {
+  addKeyboardListeners(keyboard, callback) {
+    const key = keyboard
+      .addKey(ioc.Phaser.KeyCode.ONE);
+    key.onUp.add(() => {
+      callback(this);
+    });
+  }
+
+  isGestureApplicable(pointers) {
     let sX, sY; // smallest x and y
     let lX, lY; // largest x and y
     pointers.forEach(pointer => {

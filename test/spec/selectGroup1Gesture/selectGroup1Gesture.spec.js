@@ -18,15 +18,15 @@ describe.only('selectGroup1Gesture', () => {
   });
 
   it('single precise tap', () => {
-    expect(gesture.isApplicable(singlePreciseTapData)).to.be.true;
+    expect(gesture.isGestureApplicable(singlePreciseTapData)).to.be.true;
   });
 
   it('small circle', () => {
-    expect(gesture.isApplicable(smallCircle)).to.be.false;
+    expect(gesture.isGestureApplicable(smallCircle)).to.be.false;
   });
 
   it('two fingers', () => {
-    expect(gesture.isApplicable(doublePreciseTap)).to.be.false;
+    expect(gesture.isGestureApplicable(doublePreciseTap)).to.be.false;
   });
 
 });

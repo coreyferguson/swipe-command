@@ -9,35 +9,47 @@ class GestureCommands {
 
   create() {
     const style = { font: '3em Arial', fill: '#ff0044', align: 'center' };
-    this.isPointerDownText = ioc.game.phaserGame.add.text(
+    this.gestureText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
-      ioc.game.phaserGame.world.centerY,
+      0,
       'isPointerDown',
       style
     );
-    this.isPointerDownText.anchor.set(0.5);
-    this.isPointerDownText.alpha = 0;
+    this.gestureText.anchor.set(0.5, 0);
+    this.gestureText.alpha = 0;
+
+    const keyboard = ioc.game.phaserGame.input.keyboard;
+    ioc.gestures.forEach(gesture => {
+      gesture.addKeyboardListeners(keyboard, gesture => {
+        this.applyGesture(gesture);
+      });
+    });
   }
 
   update() {
     if (this.isPointerDown()) {
-      if (!this.gesturing) {
-        ioc.game.phaserGame.add.tween(this.isPointerDownText)
-          .to({ alpha: 1 }, 1000, 'Linear', true);
-      }
       this.gesturing = true;
       this.pushPointers(ioc.game.phaserGame.input);
     } else {
       if (this.gesturing) {
-        ioc.game.phaserGame.add.tween(this.isPointerDownText)
-          .to({ alpha: 0 }, 1000, 'Linear', true);
         ioc.gestures.forEach(gesture => {
-          gesture.isApplicable(this.pointers);
+          if (gesture.isGestureApplicable(this.pointers)) {
+            this.applyGesture(gesture);
+          }
         });
       }
       this.gesturing = false;
       this.pointers = [];
     }
+  }
+
+  applyGesture(gesture) {
+    gesture.apply();
+    this.gestureText.setText(gesture.getName());
+    ioc.game.phaserGame.add.tween(this.gestureText)
+      .to({ alpha: 1.0 }, 300, 'Linear')
+      .to({ alpha: 0.0 }, 300, 'Linear')
+      .start();
   }
 
   pushPointers(input) {
