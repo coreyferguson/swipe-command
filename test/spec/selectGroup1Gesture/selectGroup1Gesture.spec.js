@@ -1,7 +1,6 @@
 
 // configure test ioc
 require('../../support/testIoc');
-const ioc = require('../../../src/ioc');
 
 // component being tested
 const gesture = require('../../../src/game/gestures/selectGroup1Gesture');
