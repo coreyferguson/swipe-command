@@ -19,9 +19,9 @@
     <div id='gameContent'></div>
     <script src="js/phaser.js"></script>
     <script>
-      // find largest 16:9 ratio that can fit into window
-      const widthRatio = 16;
-      const heightRatio = 9;
+      // find largest 9:16 ratio that can fit into window
+      const widthRatio = 9;
+      const heightRatio = 16;
       let width = window.innerWidth;
       let height = heightRatio*width/widthRatio;
       if (height > window.innerHeight) {
