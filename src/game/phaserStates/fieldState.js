@@ -17,8 +17,8 @@ class FieldState {
     this.background = ioc.game.phaserGame.add.tileSprite(
       0,
       0,
-      ioc.game.phaserGame.width,
-      ioc.game.phaserGame.height,
+      ioc.game.width,
+      ioc.game.height,
       'background'
     );
     this.background.tileScale.setTo(0.25, 0.25);
