@@ -8,8 +8,7 @@ class SelectGroup1Gesture {
   }
 
   addKeyboardListeners(keyboard, callback) {
-    const key = keyboard
-      .addKey(ioc.Phaser.KeyCode.ONE);
+    const key = keyboard.addKey(ioc.Phaser.KeyCode.ONE);
     key.onUp.add(() => {
       callback(this);
     });

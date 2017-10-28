@@ -32,6 +32,7 @@ class GestureCommands {
       this.pushPointers(ioc.game.phaserGame.input);
     } else {
       if (this.gesturing) {
+        // console.log(JSON.stringify(this.pointers));
         ioc.gestures.forEach(gesture => {
           if (gesture.isGestureApplicable(this.pointers)) {
             this.applyGesture(gesture);
