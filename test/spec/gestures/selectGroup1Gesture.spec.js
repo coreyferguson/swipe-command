@@ -22,15 +22,15 @@ describe('selectGroup1Gesture', () => {
     expect(gesture.isGestureApplicable(singlePreciseTapData)).to.be.true;
   });
 
-  it('small circle', () => {
+  it('not small circle', () => {
     expect(gesture.isGestureApplicable(smallCircle)).to.be.false;
   });
 
-  it('two fingers', () => {
+  it('not two fingers', () => {
     expect(gesture.isGestureApplicable(doublePreciseTap)).to.be.false;
   });
 
-  it('mouse click', () => {
+  it('not mouse click', () => {
     expect(gesture.isGestureApplicable(mouseClick)).to.be.false;
   });
 

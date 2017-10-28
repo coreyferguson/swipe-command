@@ -13,5 +13,6 @@ ioc.fieldStates = [
 
 ioc.gestures = [
   require('../game/gestures/selectGroup1Gesture'),
-  require('../game/gestures/advanceGesture')
+  require('../game/gestures/advanceGesture'),
+  require('../game/gestures/retreatGesture')
 ];
