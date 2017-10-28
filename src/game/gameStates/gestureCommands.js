@@ -32,7 +32,7 @@ class GestureCommands {
         ioc.game.phaserGame.add.tween(this.isPointerDownText)
           .to({ alpha: 0 }, 1000, 'Linear', true);
         ioc.gestures.forEach(gesture => {
-          gesture.apply(this.pointers);
+          gesture.isApplicable(this.pointers);
         });
       }
       this.gesturing = false;

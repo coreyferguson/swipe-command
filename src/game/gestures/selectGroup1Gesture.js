@@ -2,7 +2,11 @@
 
 class SelectGroup1Gesture {
 
-  apply(pointers) {
+  getName() {
+    return 'Select Group 1';
+  }
+
+  isApplicable(pointers) {
     let sX, sY; // smallest x and y
     let lX, lY; // largest x and y
     pointers.forEach(pointer => {
@@ -16,6 +20,9 @@ class SelectGroup1Gesture {
     const boxWidth = lX-sX;
     const boxHeight = lY-sY;
     return (boxWidth < 10 && boxHeight < 10);
+  }
+
+  apply() {
   }
 
 }
