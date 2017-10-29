@@ -3,9 +3,16 @@ const ioc = require('../../ioc');
 
 class Level {
 
-  constructor() {
+  reset() {
     this.index = 0;
   }
+
+  create() {
+  }
+
+  ////               ////
+  // getters / setters //
+  ////               ////
 
   title() {
     return ioc.levels[this.index].title;

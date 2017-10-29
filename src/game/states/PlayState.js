@@ -16,6 +16,7 @@ class PlayState extends ioc.Phaser.State {
   create() {
     ioc.game.phaserGame.physics.startSystem(ioc.Phaser.Physics.ARCADE);
     this.createBackground();
+    this.initializeLevel();
     ioc.playStates.forEach(state => {
       if (state.create) state.create();
     });
@@ -36,6 +37,9 @@ class PlayState extends ioc.Phaser.State {
       'background'
     );
     this.background.tileScale.setTo(0.25, 0.25);
+  }
+
+  initializeLevel() {
   }
 
 }

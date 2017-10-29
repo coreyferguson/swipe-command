@@ -1,26 +1,26 @@
 
 require('../support/testIoc');
 const ioc = require('../../src/ioc');
-const gestureCommands = require('../../src/game/playStates/gestures');
+const gestureState = require('../../src/game/playStates/gesture');
 const { expect } = require('../support/testUtils');
 
-describe('gestureCommands', () => {
+describe('gestureState', () => {
 
   describe('isPointerDown', () => {
 
     it('no pointers down', () => {
-      expect(gestureCommands.isPointerDown()).to.be.false;
+      expect(gestureState.isPointerDown()).to.be.false;
     });
 
     it('mouse pointer down', () => {
       ioc.game.phaserGame.input.mousePointer.isDown = true;
-      expect(gestureCommands.isPointerDown()).to.be.true;
+      expect(gestureState.isPointerDown()).to.be.true;
       ioc.game.phaserGame.input.mousePointer.isDown = false;
     });
 
     it('first finger down', () => {
       ioc.game.phaserGame.input.pointers[0].isDown = true;
-      expect(gestureCommands.isPointerDown()).to.be.true;
+      expect(gestureState.isPointerDown()).to.be.true;
       ioc.game.phaserGame.input.pointers[0].isDown = false;
     });
 
