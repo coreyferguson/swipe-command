@@ -8,19 +8,31 @@ class LevelSplashState {
   }
 
   create() {
+    const texts = [];
     const title = ioc.level.title();
-    const style = { font: '3em Arial', fill: '#ff0044', align: 'center' };
     const titleText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
       ioc.game.phaserGame.world.centerY,
       title,
-      style
+      { font: '3em Arial', fill: '#ff0044', align: 'center' }
     );
-    titleText.anchor.set(0.5, 0);
-    titleText.alpha = 0;
-    ioc.game.phaserGame.add.tween(titleText)
-      .to({ alpha: 1.0 }, 1000, 'Linear')
-      .start();
+    texts.push(titleText);
+    const description = ioc.level.description();
+    const descriptionText = ioc.game.phaserGame.add.text(
+      ioc.game.phaserGame.world.centerX,
+      ioc.game.phaserGame.world.centerY+50,
+      description,
+      { font: '2em Arial', fill: '#ff0044', align: 'center' }
+    );
+    texts.push(descriptionText);
+
+    texts.forEach(text => {
+      text.anchor.set(0.5, 0);
+      text.alpha = 0;
+      ioc.game.phaserGame.add.tween(text)
+        .to({ alpha: 1.0 }, 1000, 'Linear')
+        .start();
+    });
   }
 
   update() {

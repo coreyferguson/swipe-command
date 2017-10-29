@@ -15,6 +15,10 @@ class Level {
     return ioc.levels[this.index].title;
   }
 
+  description() {
+    return ioc.levels[this.index].description;
+  }
+
 }
 
 module.exports = new Level();
