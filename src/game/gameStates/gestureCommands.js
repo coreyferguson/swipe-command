@@ -12,7 +12,7 @@ class GestureCommands {
     this.gestureText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
       0,
-      'isPointerDown',
+      'gestureText',
       style
     );
     this.gestureText.anchor.set(0.5, 0);

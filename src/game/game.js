@@ -9,6 +9,7 @@ class Game {
 
     this.width = width;
     this.height = height;
+    this.phaserGame.state.add('levelSplashState', ioc.levelSplashState);
     this.phaserGame.state.add('fieldState', ioc.fieldState);
     parent.addEventListener('click', () => {
       screenfull.request(parent);
@@ -20,7 +21,7 @@ class Game {
     ioc.fieldStates
       .filter(fieldState => fieldState.reset)
       .forEach(fieldState => fieldState.reset());
-    this.phaserGame.state.start('fieldState');
+    this.phaserGame.state.start('levelSplashState');
   }
 
 }
