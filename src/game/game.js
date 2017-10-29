@@ -6,22 +6,14 @@ class Game {
 
   start(width, height, parent) {
     this.phaserGame = new Phaser.Game(width, height, Phaser.AUTO, parent);
-
     this.width = width;
     this.height = height;
-    this.phaserGame.state.add('levelSplashState', ioc.levelSplashState);
-    this.phaserGame.state.add('fieldState', ioc.fieldState);
+    this.phaserGame.state.add('playSplashState', ioc.PlaySplashState);
+    this.phaserGame.state.add('playState', ioc.PlayState);
     parent.addEventListener('click', () => {
       screenfull.request(parent);
     });
-    this.reset();
-  }
-
-  reset() {
-    ioc.fieldStates
-      .filter(fieldState => fieldState.reset)
-      .forEach(fieldState => fieldState.reset());
-    this.phaserGame.state.start('levelSplashState');
+    this.phaserGame.state.start('playSplashState');
   }
 
 }

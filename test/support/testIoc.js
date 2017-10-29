@@ -6,8 +6,8 @@ ioc.config = require('../../src/config');
 ioc.game = require('../stubs/gameStub');
 
 // State: Field
-ioc.fieldState = require('../stubs/fieldStateStub');
-ioc.fieldStates = [
-  new ioc.fieldState.FieldState(),
-  new ioc.fieldState.FieldState()
+ioc.PlayState = require('../stubs/playStateStub');
+ioc.playStates = [
+  new ioc.PlayState(),
+  new ioc.PlayState()
 ];

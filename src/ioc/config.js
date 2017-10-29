@@ -5,23 +5,26 @@ ioc.Phaser = Phaser;
 ioc.config = require('../config');
 ioc.game = require('../game');
 
-// Level
-ioc.level = require('../game/gameStates/level');
+// Phaser States
+ioc.PlayState = require('../game/states/PlayState');
+ioc.PlaySplashState = require('../game/states/PlaySplashState');
+
+// Play States
+ioc.playStates = [
+  require('../game/playStates/gestures'),
+  require('../game/playStates/friendlies/lieutenant')
+];
+
+// Levels
+ioc.level = require('../game/levels');
 ioc.levels = [
   require('../game/levels/001.json')
 ];
-ioc.levelSplashState = require('../game/phaserStates/levelSplashState');
 
 // Gestures
-ioc.gestureCommands = require('../game/gameStates/gestureCommands');
 ioc.gestures = [
   require('../game/gestures/selectGroup1Gesture'),
   require('../game/gestures/advanceGesture'),
   require('../game/gestures/retreatGesture')
 ];
 
-// State: Field
-ioc.fieldState = require('../game/phaserStates/fieldState');
-ioc.fieldStates = [
-  require('../game/gameStates/gestureCommands')
-];

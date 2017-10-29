@@ -4,10 +4,6 @@ const ioc = require('../../ioc');
 class Level {
 
   constructor() {
-    this.reset();
-  }
-
-  reset() {
     this.index = 0;
   }
 
@@ -21,5 +17,4 @@ class Level {
 
 }
 
-module.exports = new Level();
-module.exports.Level = Level;
+module.exports = Level;

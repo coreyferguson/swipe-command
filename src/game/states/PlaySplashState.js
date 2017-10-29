@@ -1,9 +1,10 @@
 
 const ioc = require('../../ioc');
 
-class LevelSplashState {
+class LevelSplashState extends ioc.Phaser.State {
 
-  reset() {
+  constructor() {
+    super();
     this.pointerState = undefined;
   }
 
@@ -41,11 +42,10 @@ class LevelSplashState {
       this.pointerState = 'down';
     } else if (this.pointerState === 'down' && pointer.isUp) {
       this.pointerState = 'up';
-      ioc.game.phaserGame.state.start('fieldState');
+      ioc.game.phaserGame.state.start('playState');
     }
   }
 
 }
 
-module.exports = new LevelSplashState();
-module.exports.LevelSplashState = LevelSplashState;
+module.exports = LevelSplashState;

@@ -1,7 +1,7 @@
 
 require('../support/testIoc');
 const ioc = require('../../src/ioc');
-const gestureCommands = require('../../src/game/gameStates/gestureCommands');
+const gestureCommands = require('../../src/game/playStates/gestures');
 const { expect } = require('../support/testUtils');
 
 describe('gestureCommands', () => {

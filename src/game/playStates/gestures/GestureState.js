@@ -1,13 +1,10 @@
 
-const ioc = require('../../ioc');
+const ioc = require('../../../ioc');
 
 class GestureCommands {
 
-  reset() {
-    this.gesturing = false;
-  }
-
   create() {
+    this.gesturing = false;
     const style = { font: '3em Arial', fill: '#ff0044', align: 'center' };
     this.gestureText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
@@ -85,5 +82,4 @@ class GestureCommands {
 
 }
 
-module.exports = new GestureCommands();
-module.exports.GestureCommands = GestureCommands;
+module.exports = GestureCommands;
