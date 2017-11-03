@@ -4,12 +4,13 @@
   "description": "Automate your way out of space with robot helpers.",
   "main": "index.js",
   "scripts": {
-    "predist": "npm run eslint && npm test",
     "dist": "node scripts/dist.js",
     "eslint": "./node_modules/.bin/eslint src test scripts",
-    "start": "node_modules/.bin/webpack-dev-server --open",
+    "predist": "npm run eslint && npm test",
     "pretest": "npm run eslint",
+    "start": "node_modules/.bin/webpack-dev-server --open",
     "test": "./node_modules/.bin/mocha --recursive test/spec",
+    "watch": "npm test -- --watch",
     "webpack": "./node_modules/.bin/webpack"
   },
   "author": "Corey Ferguson <corey.t.ferguson@gmail.com>",

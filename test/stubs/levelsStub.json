@@ -1,0 +1,10 @@
+[
+  {
+    "title": "title value",
+    "description": "description value",
+    "levelEntities": {
+      "pirate": 5,
+      "lieutenant": 5
+    }
+  }
+]

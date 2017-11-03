@@ -1,10 +1,8 @@
 {
   "title": "Humble Beginnings",
   "description": "Destroy the pirate ships",
-  "hostiles": {
-    "pirate": 5
-  },
-  "friendlies": {
+  "levelEntities": {
+    "pirate": 5,
     "lieutenant": 5
   }
 }

@@ -9,6 +9,9 @@ class PlayState extends ioc.Phaser.State {
     ioc.game.phaserGame.load.image('background', 'images/background.png');
     ioc.game.phaserGame.load.image('lieutenant', 'ships/miner_100x100.png');
     ioc.playStates.forEach(state => {
+      if (state.reset) state.reset();
+    });
+    ioc.playStates.forEach(state => {
       if (state.preload) state.preload();
     });
   }
@@ -16,7 +19,6 @@ class PlayState extends ioc.Phaser.State {
   create() {
     ioc.game.phaserGame.physics.startSystem(ioc.Phaser.Physics.ARCADE);
     this.createBackground();
-    this.initializeLevel();
     ioc.playStates.forEach(state => {
       if (state.create) state.create();
     });
@@ -37,9 +39,6 @@ class PlayState extends ioc.Phaser.State {
       'background'
     );
     this.background.tileScale.setTo(0.25, 0.25);
-  }
-
-  initializeLevel() {
   }
 
 }

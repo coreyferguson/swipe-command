@@ -10,7 +10,7 @@ class LevelSplashState extends ioc.Phaser.State {
 
   create() {
     const texts = [];
-    const title = ioc.level.title();
+    const title = ioc.levelService.title();
     const titleText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
       ioc.game.phaserGame.world.centerY,
@@ -18,7 +18,7 @@ class LevelSplashState extends ioc.Phaser.State {
       { font: '3em Arial', fill: '#ff0044', align: 'center' }
     );
     texts.push(titleText);
-    const description = ioc.level.description();
+    const description = ioc.levelService.description();
     const descriptionText = ioc.game.phaserGame.add.text(
       ioc.game.phaserGame.world.centerX,
       ioc.game.phaserGame.world.centerY+50,

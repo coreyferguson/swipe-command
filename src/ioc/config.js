@@ -11,11 +11,18 @@ ioc.PlaySplashState = require('../game/states/PlaySplashState');
 
 // Levels
 ioc.level = require('../game/playStates/level');
+ioc.levelService = require('../game/levels/levelService');
 ioc.levels = [
   require('../game/levels/001.json')
 ];
 
+ioc.lieutenant = require('../game/playStates/friendlies/lieutenant');
+ioc.levelEntities = [
+  ioc.lieutenant
+];
+
 // Gestures
+ioc.gesture = require('../game/playStates/gesture');
 ioc.gestures = [
   require('../game/gestures/selectGroup1Gesture'),
   require('../game/gestures/advanceGesture'),
@@ -24,8 +31,8 @@ ioc.gestures = [
 
 // Play States
 ioc.playStates = [
-  require('../game/playStates/level'),
-  require('../game/playStates/gestures'),
-  require('../game/playStates/friendlies/lieutenant')
+  ioc.level,
+  ioc.gesture,
+  ioc.lieutenant
 ];
 
